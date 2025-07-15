@@ -1,79 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF_8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mauro - Personal Website</title>
+    <title>My Personal Website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic CSS for demonstration */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+            color: #334155; /* Dark slate text */
         }
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
+        /* Smooth scrolling for navigation */
+        html {
+            scroll-behavior: smooth;
         }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
+        .section-padding {
+            padding: 4rem 1rem; /* Default padding for sections */
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px 0;
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem; /* Larger padding on medium screens and up */
+            }
         }
-        section {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
-        .skills-list ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .skills-list li {
-            background-color: #eee;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .portfolio-item {
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 8rem 4rem; /* Even larger padding on large screens and up */
+            }
         }
     </style>
 </head>
+<body class="antialiased">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white shadow-sm fixed w-full z-10 top-0">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-indigo-600 rounded-lg p-2 hover:bg-indigo-50 transition duration-300">YourName</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">About</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Portfolio</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-4">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Portfolio</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-16"> <!-- Padding top to account for fixed header -->
+
+        <!-- Home Section -->
+        <section id="home" class="section-padding bg-gradient-to-r from-indigo-500 to-purple-600 text-white flex items-center justify-center min-h-screen">
+            <div class="container mx-auto text-center px-4">
+                <img src="https://placehold.co/150x150/6366f1/ffffff?text=Your+Photo" alt="Your Photo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Hi, I'm <span class="text-yellow-300">Your Name</span></h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">A passionate [Your Profession/Role] creating awesome things.</p>
+                <a href="#portfolio" class="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out inline-block">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-indigo-700">About Me</h2>
+                <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700">
+                    <p class="mb-6">Hello! I'm [Your Name], a [Your Profession/Role] with a passion for [Your Interests/Skills]. I love [mention a specific aspect of your work, e.g., solving complex problems, designing user-friendly interfaces, writing clean code].</p>
+                    <p class="mb-6">My journey in [Your Field] began [mention when/how, e.g., during my university studies, a few years ago when I discovered...]. Since then, I've been dedicated to honing my skills in [List 2-3 key skills, e.g., web development, graphic design, data analysis].</p>
+                    <p>When I'm not working, you can find me [mention a hobby, e.g., hiking in the mountains, reading sci-fi novels, experimenting with new recipes]. I believe in continuous learning and always look for opportunities to grow both personally and professionally.</p>
+                    <div class="mt-8 text-center">
+                        <a href="#contact" class="bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-3 px-8 rounded-full text-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out inline-block">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section-padding bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-indigo-700">My Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x400/e0e7ff/4338ca?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-indigo-800">Project Title One</h3>
+                            <p class="text-gray-600 mb-4">A brief description of your project, highlighting its purpose and your role.</p>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                Learn More
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x400/e0e7ff/4338ca?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-indigo-800">Project Title Two</h3>
+                            <p class="text-gray-600 mb-4">Another brief description of your project, showcasing its features.</p>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                Learn More
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x400/e0e7ff/4338ca?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-indigo-800">Project Title Three</h3>
+                            <p class="text-gray-600 mb-4">Description for your third project, emphasizing the technologies used.</p>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                                Learn More
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-indigo-700 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Have a question, a project idea, or just want to say hello? Feel free to reach out!</p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 mr-3 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:your.email@example.com" class="text-lg hover:underline">your.email@example.com</a>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 mr-3 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path></svg>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-lg hover:underline">LinkedIn Profile</a>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 mr-3 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-lg hover:underline">GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
 </html>
