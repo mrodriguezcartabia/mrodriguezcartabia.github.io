@@ -13,17 +13,13 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 0 25px;
-            background-color: #fff;
+            background-color: #f9f9f9; /* Gris extremadamente claro */
         }
 
-        /* LÓGICA DE IDIOMAS (ESTO CORRIGE EL ERROR) */
-        /* Por defecto, ocultamos todo lo que sea inglés */
+        /* LÓGICA DE IDIOMAS */
         [lang="en"] { display: none; }
-        
-        /* Cuando el body tiene la clase 'lang-en', ocultamos español y mostramos inglés */
         body.en-active [lang="es"] { display: none; }
         body.en-active [lang="en"] { display: inline; }
-        /* Para bloques (div, section, h2) usamos display block */
         body.en-active div[lang="en"], 
         body.en-active section[lang="en"], 
         body.en-active h2[lang="en"],
@@ -32,15 +28,15 @@
         /* SELECTOR DE IDIOMA */
         .lang-switch {
             text-align: right;
-            font-size: 0.85em;
+            font-size: 0.8em;
             margin-bottom: 30px;
         }
         .lang-switch span {
             cursor: pointer;
             color: #999;
             margin-left: 12px;
-            transition: 0.3s;
             text-decoration: none;
+            letter-spacing: 1px;
         }
         .lang-switch span.active {
             color: #000;
@@ -53,50 +49,45 @@
         h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: normal; color: #000; }
         .position-title { font-size: 1.1em; color: #555; margin-bottom: 10px; }
         .links-social { margin-top: 15px; }
-        .links-social a { margin-right: 15px; font-size: 0.9em; color: #0056b3; text-decoration: none; }
-        h2 { border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 45px; font-weight: normal; text-transform: uppercase; font-size: 0.9em; letter-spacing: 2px; color: #666; }
+        .links-social a { font-size: 0.9em; color: #0056b3; text-decoration: none; border-bottom: 1px solid transparent; }
+        .links-social a:hover { border-bottom: 1px solid #0056b3; }
+
+        h2 { border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-top: 45px; font-weight: normal; text-transform: uppercase; font-size: 0.85em; letter-spacing: 2px; color: #666; }
         .interests-list { margin: 10px 0; font-style: italic; color: #444; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 18px; display: flex; flex-wrap: wrap; }
-        .date { min-width: 130px; color: #888; font-size: 0.9em; }
-        .content { flex: 1; min-width: 250px; }
-        .thesis { font-size: 0.95em; margin-top: 4px; color: #555; border-left: 2px solid #f0f0f0; padding-left: 10px; }
         
-        @media (max-width: 600px) {
-            .date { width: 100%; margin-bottom: 3px; }
-            body { margin: 20px auto; }
-        }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 18px; line-height: 1.5; }
+        
+        .thesis { font-size: 0.95em; margin-top: 4px; color: #555; border-left: 2px solid #eee; padding-left: 10px; }
+        .pub-year { color: #777; font-weight: bold; }
+        
+        footer { margin-top: 60px; border-top: 1px solid #ddd; padding-top: 20px; font-size: 0.9em; color: #444; text-align: center; }
+        .email-footer { font-weight: bold; color: #222; margin-top: 10px; display: block; text-decoration: none; }
     </style>
 </head>
 <body id="main-body">
 
     <div class="lang-switch">
-        <span id="btn-es" class="active" onclick="setLang('es')">ES</span>
-        <span id="btn-en" onclick="setLang('en')">EN</span>
+        <span id="btn-es" class="active" onclick="setLang('es')">ESPAÑOL</span>
+        <span id="btn-en" onclick="setLang('en')">ENGLISH</span>
     </div>
 
     <header>
         <h1>Mauro Rodriguez Cartabia</h1>
         <div class="position-title">
-            <span lang="es">Investigador Asistente (CONICET) &middot; Profesor Adjunto (UBA)</span>
-            <span lang="en">Assistant Researcher (CONICET) &middot; Adjunct Professor (UBA)</span>
-        </div>
-        <div class="contact-info">
-            IMAS - Instituto de Investigaciones Matemáticas "Luis A. Santaló"<br>
-            <a href="mailto:mrodriguezcartabia@gmail.com">mrodriguezcartabia@gmail.com</a>
+            <span lang="es">Investigador Asistente (CONICET)</span>
+            <span lang="en">Assistant Researcher (CONICET)</span>
         </div>
         <div class="links-social">
-            <a href="https://scholar.google.com/citations?user=TU_ID_AQUI" target="_blank">Google Scholar</a>
-            <a href="https://www.researchgate.net/profile/Mauro-Rodriguez-Cartabia" target="_blank">ResearchGate</a>
-            <a href="https://arxiv.org/search/?searchtype=author&query=Rodriguez+Cartabia%2C+M" target="_blank">arXiv</a>
+            <a href="https://scholar.google.com/citations?user=ZqE6hxEAAAAJ&hl=es&oi=ao" target="_blank">Google Scholar</a>
         </div>
     </header>
 
     <section>
         <h2 lang="es">Intereses de Investigación</h2>
         <h2 lang="en">Research Interests</h2>
-        <p class="interests-list" lang="es">Teoría de juegos evolutivos, ecuaciones diferenciales con retardo, modelos de quimiostatos, sistemas de partículas interactuantes, ecuaciones cinéticas.</p>
-        <p class="interests-list" lang="en">Evolutionary game theory, delay differential equations, chemostat models, interacting particle systems, kinetic equations.</p>
+        <p class="interests-list" lang="es">Teoría de juegos evolutivos y ecuaciones diferenciales.</p>
+        <p class="interests-list" lang="en">Evolutionary game theory and differential equations.</p>
     </section>
 
     <section>
@@ -104,19 +95,9 @@
         <h2 lang="en">Current Position</h2>
         <ul>
             <li>
-                <span class="date">2023 – <span lang="es">Pres.</span><span lang="en">Pres.</span></span>
-                <div class="content">
-                    <strong lang="es">Investigador Asistente</strong><strong lang="en">Assistant Researcher</strong>, CONICET. <br> 
-                    <span lang="es">Director: P. Amster.</span>
-                    <span lang="en">Supervisor: P. Amster.</span>
-                </div>
-            </li>
-            <li>
-                <span class="date">2025 – <span lang="es">Pres.</span><span lang="en">Pres.</span></span>
-                <div class="content">
-                    <strong lang="es">Profesor Interino Adjunto</strong><strong lang="en">Adjunct Professor</strong>, <br>
-                    Departamento de Matemática, FCEN, UBA.
-                </div>
+                <strong lang="es">Investigador Asistente</strong><strong lang="en">Assistant Researcher</strong>, CONICET. <br> 
+                <span lang="es">Lugar de trabajo: Instituto de investigaciones matemáticas Luis A. Santaló (IMAS). Director: P. Amster.</span>
+                <span lang="en">Affiliation: Luis A. Santaló Mathematical Research Institute (IMAS). Supervisor: P. Amster.</span>
             </li>
         </ul>
     </section>
@@ -126,68 +107,67 @@
         <h2 lang="en">Education</h2>
         <ul>
             <li>
-                <span class="date">2013 – 2019</span>
-                <div class="content">
-                    <strong lang="es">Doctor en Ciencias Matemáticas</strong><strong lang="en">Ph.D. in Mathematical Sciences</strong>, FCEN, UBA.<br>
-                    <div class="thesis">
-                        <span lang="es">Tesis: <em>"Modelos para juegos evolutivos"</em>. Director: J. P. Pinasco.</span>
-                        <span lang="en">Thesis: <em>"Models for evolutionary games"</em>. Supervisor: J. P. Pinasco.</span>
-                    </div>
+                <strong lang="es">Doctor en Ciencias Matemáticas</strong><strong lang="en">Ph.D. in Mathematical Sciences</strong>, FCEN, UBA.<br>
+                <div class="thesis">
+                    <span lang="es">Tesis: <em>"Modelos para juegos evolutivos"</em>. Director: J. P. Pinasco.</span>
+                    <span lang="en">Thesis: <em>"Models for evolutionary games"</em>. Supervisor: J. P. Pinasco.</span>
                 </div>
             </li>
             <li>
-                <span class="date">2007 – 2023</span>
-                <div class="content">
-                    <strong lang="es">Actuario en Economía</strong><strong lang="en">Actuary in Economics</strong>, FCE, UBA.
-                </div>
+                <strong lang="es">Actuario en Economía</strong><strong lang="en">Actuary in Economics</strong>, FCE, UBA.
             </li>
             <li>
-                <span class="date">2007 – 2013</span>
-                <div class="content">
-                    <strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. in Mathematics</strong>, FCEN, UBA.
-                </div>
+                <strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. in Mathematics</strong>, FCEN, UBA.
             </li>
         </ul>
     </section>
 
     <section>
-        <h2 lang="es">Publicaciones Seleccionadas</h2>
-        <h2 lang="en">Selected Publications</h2>
+        <h2 lang="es">Publicaciones</h2>
+        <h2 lang="en">Publications</h2>
         <ul>
             <li>
-                <span class="date">2025</span>
-                <div class="content">
-                    "A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). <br>
-                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487" target="_blank">DOI</a>
-                </div>
+                "A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). 
+                <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487" target="_blank">DOI</a>. <span class="pub-year">2025</span>.
             </li>
             <li>
-                <span class="date">2024</span>
-                <div class="content">
-                    "Uniform persistence criteria for a variable inputs chemostat model..." (with D. Sepúlveda Oehninger). <br>
-                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505" target="_blank">DOI</a>
-                </div>
+                "Uniform persistence criteria for a variable inputs chemostat model with delayed response in growth and complete analysis of the periodic case" (with D. Sepúlveda Oehninger). 
+                <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505" target="_blank">DOI</a>. <span class="pub-year">2024</span>.
             </li>
             <li>
-                <span class="date">2023</span>
-                <div class="content">
-                    "Optimal condition for asymptotic consensus in the Hegselmann-Krause model..." (with J. Haskovec). <br>
-                    <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482" target="_blank">DOI</a>
-                </div>
+                "Persistence criteria for a chemostat with variable nutrient input and variable washout with delayed response in growth". 
+                <em>Chaos, Solitons & Fractals</em>. <a href="https://doi.org/10.1016/j.chaos.2023.113514" target="_blank">DOI</a>. <span class="pub-year">2023</span>.
             </li>
             <li>
-                <span class="date">2021</span>
-                <div class="content">
-                    "Cucker-Smale model with time delay". <br>
-                    <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195" target="_blank">DOI</a>
-                </div>
+                "Optimal condition for asymptotic consensus in the Hegselmann-Krause model with finite speed of information propagation" (with J. Haskovec). 
+                <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482" target="_blank">DOI</a>. <span class="pub-year">2023</span>.
+            </li>
+            <li>
+                "Cucker-Smale model with time delay". 
+                <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195" target="_blank">DOI</a>. <span class="pub-year">2021</span>.
+            </li>
+            <li>
+                "Interacting particles systems with delay and random delay differential equations" (with J. P. Pinasco and N. Saintier). 
+                <em>Nonlinear Analysis</em>. <a href="https://doi.org/10.1016/j.na.2021.112524" target="_blank">DOI</a>. <span class="pub-year">2021</span>.
+            </li>
+            <li>
+                "Evolutionary game theory in mixed strategies: From microscopic interactions to kinetic equations" (with J. P. Pinasco and N. Saintier). 
+                <em>Kinetic and Related Models</em>. <a href="https://doi.org/10.3934/krm.2020051" target="_blank">DOI</a>. <span class="pub-year">2021</span>.
+            </li>
+            <li>
+                "A game theoretic model of wealth distribution" (with J. P. Pinasco and N. Saintier). 
+                <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3" target="_blank">DOI</a>. <span class="pub-year">2018</span>.
             </li>
         </ul>
     </section>
 
-    <footer style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.8em; color: #999; text-align: center;">
-        <span lang="es">Última actualización: Enero 2026</span>
-        <span lang="en">Last updated: January 2026</span>
+    <footer>
+        <span lang="es">Contacto:</span><span lang="en">Contact:</span>
+        <a href="mailto:mrodriguezcartabia@dm.uba.ar" class="email-footer">mrodriguezcartabia@dm.uba.ar</a>
+        <p style="font-size: 0.75em; color: #999; margin-top: 20px;">
+            <span lang="es">Última actualización: Enero 2026</span>
+            <span lang="en">Last updated: January 2026</span>
+        </p>
     </footer>
 
     <script>
