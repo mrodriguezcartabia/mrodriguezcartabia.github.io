@@ -6,51 +6,68 @@
     <title>Mauro Rodriguez Cartabia</title>
     <style>
         body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: "Georgia", serif; /* Un toque más académico y clásico */
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 850px;
             margin: 40px auto;
             padding: 0 20px;
-            background-color: #fcfcfc;
+            background-color: #fff;
         }
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 5px;
+        
+        /* Selector de Idioma */
+        .lang-switch {
+            text-align: right;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .lang-switch a {
+            cursor: pointer;
+            color: #888;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .lang-switch a.active {
             color: #000;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            font-weight: normal;
         }
         h2 {
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #eee;
             padding-bottom: 5px;
             margin-top: 40px;
             font-weight: normal;
-            color: #444;
             text-transform: uppercase;
-            font-size: 1.1em;
-            letter-spacing: 1px;
+            font-size: 1em;
+            letter-spacing: 2px;
+            color: #555;
         }
         .contact-info {
             margin-bottom: 30px;
             font-size: 0.95em;
-        }
-        .item {
-            margin-bottom: 15px;
-        }
-        .date {
-            font-weight: bold;
             color: #666;
-            min-width: 100px;
-            display: inline-block;
-        }
-        .content {
-            display: inline;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            display: flex;
+        }
+        .date {
+            min-width: 120px;
+            color: #777;
+            font-size: 0.9em;
+        }
+        .content {
+            flex: 1;
         }
         a {
             color: #0056b3;
@@ -59,110 +76,178 @@
         a:hover {
             text-decoration: underline;
         }
-        .publication-title {
-            font-style: italic;
+        .thesis {
+            font-size: 0.95em;
+            margin-top: 5px;
+            color: #444;
         }
-        .institution {
-            font-weight: 500;
-        }
+        
+        /* Control de visibilidad de idiomas */
+        [lang="en"] { display: none; }
     </style>
 </head>
 <body>
 
+    <div class="lang-switch">
+        <a id="btn-es" class="active" onclick="setLanguage('es')">ES</a>
+        <a id="btn-en" onclick="setLanguage('en')">EN</a>
+    </div>
+
     <header>
         <h1>Mauro Rodriguez Cartabia</h1>
         <div class="contact-info">
-            Investigador Asistente (CONICET) / Profesor Adjunto (UBA)<br>
+            <span lang="es">Investigador Asistente (CONICET) | Profesor Adjunto (UBA)</span>
+            <span lang="en">Assistant Researcher (CONICET) | Adjunct Professor (UBA)</span>
+            <br>
             Instituto de Investigaciones Matemáticas "Luis A. Santaló" (IMAS)<br>
             <a href="mailto:mrodriguezcartabia@gmail.com">mrodriguezcartabia@gmail.com</a>
         </div>
     </header>
 
     <section>
-        <h2>Posición Actual</h2>
+        <h2 lang="es">Posición Actual</h2>
+        <h2 lang="en">Current Position</h2>
         <ul>
             <li>
                 <span class="date">2023 – Pres.</span>
-                <span class="content"><strong>Investigador Asistente</strong>, CONICET. <br> 
-                Lugar de trabajo: IMAS. Director: P. Amster.</span>
+                <div class="content">
+                    <strong lang="es">Investigador Asistente</strong><strong lang="en">Assistant Researcher</strong>, CONICET. <br> 
+                    <span lang="es">Lugar de trabajo: IMAS. Director: P. Amster.</span>
+                    <span lang="en">Affiliation: IMAS. Supervisor: P. Amster.</span>
+                </div>
             </li>
             <li>
                 <span class="date">2025 – Pres.</span>
-                <span class="content"><strong>Profesor Interino Adjunto</strong>, Departamento de Matemática, FCEN, UBA.</span>
+                <div class="content">
+                    <strong lang="es">Profesor Interino Adjunto</strong><strong lang="en">Adjunct Professor</strong>, <br>
+                    Departamento de Matemática, FCEN, UBA.
+                </div>
             </li>
         </ul>
     </section>
 
     <section>
-        <h2>Educación</h2>
+        <h2 lang="es">Educación</h2>
+        <h2 lang="en">Education</h2>
         <ul>
             <li>
                 <span class="date">2013 – 2019</span>
-                <span class="content"><strong>Doctor en Ciencias Matemáticas</strong>, FCEN, UBA.<br>
-                Tesis: <em>"Modelos para juegos evolutivos"</em>. Director: J. P. Pinasco.</span>
+                <div class="content">
+                    <strong lang="es">Doctor en Ciencias Matemáticas</strong><strong lang="en">Ph.D. in Mathematical Sciences</strong>, FCEN, UBA.<br>
+                    <div class="thesis">
+                        <span lang="es">Tesis: <em>"Modelos para juegos evolutivos"</em>. Director: J. P. Pinasco.</span>
+                        <span lang="en">Thesis: <em>"Models for evolutionary games"</em>. Supervisor: J. P. Pinasco.</span>
+                    </div>
+                </div>
             </li>
             <li>
                 <span class="date">2007 – 2023</span>
-                <span class="content"><strong>Actuario en Economía</strong>, FCE, UBA.</span>
+                <div class="content">
+                    <strong lang="es">Actuario en Economía</strong><strong lang="en">Actuary in Economics</strong>, FCE, UBA.
+                </div>
             </li>
             <li>
                 <span class="date">2007 – 2013</span>
-                <span class="content"><strong>Licenciado en Ciencias Matemáticas</strong>, FCEN, UBA.</span>
+                <div class="content">
+                    <strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. (Licentiate) in Mathematics</strong>, FCEN, UBA.
+                </div>
             </li>
         </ul>
     </section>
 
     <section>
-        <h2>Publicaciones Seleccionadas</h2>
+        <h2 lang="es">Publicaciones</h2>
+        <h2 lang="en">Publications</h2>
         <ul>
             <li>
                 <span class="date">2025</span>
-                <span class="content">"A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (con P. Amster). <br>
-                <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487">DOI</a></span>
+                <div class="content">
+                    "A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). <br>
+                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487">DOI</a>
+                </div>
             </li>
             <li>
                 <span class="date">2024</span>
-                <span class="content">"Uniform persistence criteria for a variable inputs chemostat model..." (con D. Sepúlveda Oehninger). <br>
-                <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505">DOI</a></span>
+                <div class="content">
+                    "Uniform persistence criteria for a variable inputs chemostat model..." (with D. Sepúlveda Oehninger). <br>
+                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505">DOI</a>
+                </div>
             </li>
             <li>
                 <span class="date">2023</span>
-                <span class="content">"Optimal condition for asymptotic consensus in the Hegselmann-Krause model..." (con J. Haskovec). <br>
-                <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482">DOI</a></span>
+                <div class="content">
+                    "Optimal condition for asymptotic consensus in the Hegselmann-Krause model..." (with J. Haskovec). <br>
+                    <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482">DOI</a>
+                </div>
             </li>
             <li>
                 <span class="date">2021</span>
-                <span class="content">"Cucker-Smale model with time delay". <br>
-                <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195">DOI</a></span>
+                <div class="content">
+                    "Cucker-Smale model with time delay". <br>
+                    <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195">DOI</a>
+                </div>
             </li>
             <li>
                 <span class="date">2018</span>
-                <span class="content">"A game theoretic model of wealth distribution" (con J. P. Pinasco y N. Saintier). <br>
-                <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3">DOI</a></span>
+                <div class="content">
+                    "A game theoretic model of wealth distribution" (with J. P. Pinasco and N. Saintier). <br>
+                    <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3">DOI</a>
+                </div>
             </li>
         </ul>
     </section>
 
     <section>
-        <h2>Docencia Reciente</h2>
+        <h2 lang="es">Docencia</h2>
+        <h2 lang="en">Teaching</h2>
         <ul>
-            <li><span class="date">2025 – Pres.</span> Profesor Adjunto, DM, FCEN, UBA.</li>
-            <li><span class="date">2024</span> Jefe de Trabajos Prácticos (Regular), DM, FCEN, UBA.</li>
-            <li><span class="date">2022 – 2023</span> Profesor Invitado, Departamento de Economía, Universidad de San Andrés.</li>
+            <li>
+                <span class="date">2025 – Pres.</span>
+                <div class="content">
+                    <span lang="es">Profesor Adjunto, DM, FCEN, UBA.</span>
+                    <span lang="en">Adjunct Professor, Dept. of Mathematics, FCEN, UBA.</span>
+                </div>
+            </li>
+            <li>
+                <span class="date">2022 – 2023</span>
+                <div class="content">
+                    <span lang="es">Profesor Invitado, Universidad de San Andrés.</span>
+                    <span lang="en">Visiting Professor, Universidad de San Andrés.</span>
+                </div>
+            </li>
         </ul>
     </section>
 
-    <section>
-        <h2>Proyectos</h2>
-        <ul>
-            <li><span class="date">2021 – 2023</span> <em>Topological Methods and Non Autonomous Dynamics for Delay Differential Equations</em> (MATH–AmSud).</li>
-            <li><span class="date">2021 – 2023</span> <em>Ecuaciones diferenciales no lineales con aplicaciones</em> (IMAS).</li>
-        </ul>
-    </section>
-
-    <footer style="margin-top: 50px; font-size: 0.8em; color: #888;">
-        Actualizado: Enero 2026
+    <footer style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.8em; color: #999;">
+        <span lang="es">Última actualización: Enero 2026</span>
+        <span lang="en">Last updated: January 2026</span>
     </footer>
+
+    <script>
+        function setLanguage(lang) {
+            // Ocultar todos los elementos con atributo lang
+            document.querySelectorAll('[lang="es"]').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
+            
+            // Mostrar los del idioma seleccionado
+            // Los elementos inline (como span o strong) deben ser 'inline', los demás 'block'
+            document.querySelectorAll('[lang="' + lang + '"]').forEach(el => {
+                if (['SPAN', 'STRONG', 'A', 'EM'].includes(el.tagName)) {
+                    el.style.display = 'inline';
+                } else {
+                    el.style.display = 'block';
+                }
+            });
+
+            // Actualizar estado de los botones
+            document.getElementById('btn-es').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        // Ejecutar por defecto al cargar
+        window.onload = () => setLanguage('es');
+    </script>
 
 </body>
 </html>
