@@ -6,118 +6,159 @@
     <title>Mauro Rodriguez Cartabia</title>
     <style>
         body {
-            font-family: "Georgia", serif; /* Un toque más académico y clásico */
+            font-family: "Georgia", serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 850px;
+            color: #222;
+            max-width: 800px;
             margin: 40px auto;
-            padding: 0 20px;
+            padding: 0 25px;
             background-color: #fff;
         }
         
         /* Selector de Idioma */
         .lang-switch {
             text-align: right;
-            font-size: 0.9em;
-            margin-bottom: 20px;
+            font-size: 0.85em;
+            margin-bottom: 30px;
         }
         .lang-switch a {
             cursor: pointer;
-            color: #888;
+            color: #999;
             text-decoration: none;
-            margin-left: 10px;
+            margin-left: 12px;
+            transition: 0.3s;
         }
         .lang-switch a.active {
             color: #000;
             font-weight: bold;
-            text-decoration: underline;
+            border-bottom: 1px solid #333;
         }
 
+        header {
+            margin-bottom: 40px;
+        }
         h1 {
-            font-size: 2em;
+            font-size: 2.2em;
             margin-bottom: 5px;
             font-weight: normal;
+            color: #000;
         }
+        .position-title {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .links-social {
+            margin-top: 15px;
+        }
+        .links-social a {
+            margin-right: 15px;
+            font-size: 0.9em;
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .links-social a:hover { text-decoration: underline; }
+
         h2 {
             border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 40px;
+            padding-bottom: 8px;
+            margin-top: 45px;
             font-weight: normal;
             text-transform: uppercase;
-            font-size: 1em;
-            letter-spacing: 2px;
-            color: #555;
-        }
-        .contact-info {
-            margin-bottom: 30px;
             font-size: 0.95em;
+            letter-spacing: 2px;
             color: #666;
         }
+
+        .interests-list {
+            margin: 10px 0;
+            padding: 0;
+            font-style: italic;
+            color: #444;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
+            flex-wrap: wrap;
         }
         .date {
-            min-width: 120px;
-            color: #777;
+            min-width: 130px;
+            color: #888;
             font-size: 0.9em;
         }
         .content {
             flex: 1;
-        }
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            min-width: 250px;
         }
         .thesis {
             font-size: 0.95em;
-            margin-top: 5px;
-            color: #444;
+            margin-top: 4px;
+            color: #555;
+            border-left: 2px solid #f0f0f0;
+            padding-left: 10px;
         }
         
-        /* Control de visibilidad de idiomas */
         [lang="en"] { display: none; }
+        
+        @media (max-width: 600px) {
+            .date { width: 100%; margin-bottom: 3px; }
+            body { margin: 20px auto; }
+        }
     </style>
 </head>
 <body>
 
     <div class="lang-switch">
-        <a id="btn-es" class="active" onclick="setLanguage('es')">ES</a>
-        <a id="btn-en" onclick="setLanguage('en')">EN</a>
+        <a id="btn-es" class="active" onclick="setLanguage('es')">ESPAÑOL</a>
+        <a id="btn-en" onclick="setLanguage('en')">ENGLISH</a>
     </div>
 
     <header>
         <h1>Mauro Rodriguez Cartabia</h1>
+        <div class="position-title">
+            <span lang="es">Investigador Asistente (CONICET) &middot; Profesor Adjunto (UBA)</span>
+            <span lang="en">Assistant Researcher (CONICET) &middot; Adjunct Professor (UBA)</span>
+        </div>
         <div class="contact-info">
-            <span lang="es">Investigador Asistente (CONICET) | Profesor Adjunto (UBA)</span>
-            <span lang="en">Assistant Researcher (CONICET) | Adjunct Professor (UBA)</span>
-            <br>
-            Instituto de Investigaciones Matemáticas "Luis A. Santaló" (IMAS)<br>
+            IMAS - Instituto de Investigaciones Matemáticas "Luis A. Santaló"<br>
             <a href="mailto:mrodriguezcartabia@gmail.com">mrodriguezcartabia@gmail.com</a>
         </div>
+        
+        <div class="links-social">
+            <a href="https://scholar.google.com/citations?user=TU_ID_AQUI" target="_blank">Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/Mauro-Rodriguez-Cartabia" target="_blank">ResearchGate</a>
+            <a href="https://arxiv.org/search/?searchtype=author&query=Rodriguez+Cartabia%2C+M" target="_blank">arXiv</a>
+        </div>
     </header>
+
+    <section>
+        <h2 lang="es">Intereses de Investigación</h2>
+        <h2 lang="en">Research Interests</h2>
+        <p class="interests-list">
+            <span lang="es">Teoría de juegos evolutivos, ecuaciones diferenciales con retardo, modelos de quimiostatos, sistemas de partículas interactuantes, ecuaciones cinéticas.</span>
+            <span lang="en">Evolutionary game theory, delay differential equations, chemostat models, interacting particle systems, kinetic equations.</span>
+        </p>
+    </section>
 
     <section>
         <h2 lang="es">Posición Actual</h2>
         <h2 lang="en">Current Position</h2>
         <ul>
             <li>
-                <span class="date">2023 – Pres.</span>
+                <span class="date">2023 – <span lang="es">Pres.</span><span lang="en">Pres.</span></span>
                 <div class="content">
                     <strong lang="es">Investigador Asistente</strong><strong lang="en">Assistant Researcher</strong>, CONICET. <br> 
-                    <span lang="es">Lugar de trabajo: IMAS. Director: P. Amster.</span>
-                    <span lang="en">Affiliation: IMAS. Supervisor: P. Amster.</span>
+                    <span lang="es">Director: P. Amster.</span>
+                    <span lang="en">Supervisor: P. Amster.</span>
                 </div>
             </li>
             <li>
-                <span class="date">2025 – Pres.</span>
+                <span class="date">2025 – <span lang="es">Pres.</span><span lang="en">Pres.</span></span>
                 <div class="content">
                     <strong lang="es">Profesor Interino Adjunto</strong><strong lang="en">Adjunct Professor</strong>, <br>
                     Departamento de Matemática, FCEN, UBA.
@@ -149,88 +190,57 @@
             <li>
                 <span class="date">2007 – 2013</span>
                 <div class="content">
-                    <strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. (Licentiate) in Mathematics</strong>, FCEN, UBA.
+                    <strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. in Mathematics</strong>, FCEN, UBA.
                 </div>
             </li>
         </ul>
     </section>
 
     <section>
-        <h2 lang="es">Publicaciones</h2>
-        <h2 lang="en">Publications</h2>
+        <h2 lang="es">Publicaciones Seleccionadas</h2>
+        <h2 lang="en">Selected Publications</h2>
         <ul>
             <li>
                 <span class="date">2025</span>
                 <div class="content">
                     "A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). <br>
-                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487">DOI</a>
+                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487" target="_blank">DOI</a>
                 </div>
             </li>
             <li>
                 <span class="date">2024</span>
                 <div class="content">
                     "Uniform persistence criteria for a variable inputs chemostat model..." (with D. Sepúlveda Oehninger). <br>
-                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505">DOI</a>
+                    <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505" target="_blank">DOI</a>
                 </div>
             </li>
             <li>
                 <span class="date">2023</span>
                 <div class="content">
                     "Optimal condition for asymptotic consensus in the Hegselmann-Krause model..." (with J. Haskovec). <br>
-                    <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482">DOI</a>
+                    <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482" target="_blank">DOI</a>
                 </div>
             </li>
             <li>
                 <span class="date">2021</span>
                 <div class="content">
                     "Cucker-Smale model with time delay". <br>
-                    <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195">DOI</a>
-                </div>
-            </li>
-            <li>
-                <span class="date">2018</span>
-                <div class="content">
-                    "A game theoretic model of wealth distribution" (with J. P. Pinasco and N. Saintier). <br>
-                    <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3">DOI</a>
+                    <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195" target="_blank">DOI</a>
                 </div>
             </li>
         </ul>
     </section>
 
-    <section>
-        <h2 lang="es">Docencia</h2>
-        <h2 lang="en">Teaching</h2>
-        <ul>
-            <li>
-                <span class="date">2025 – Pres.</span>
-                <div class="content">
-                    <span lang="es">Profesor Adjunto, DM, FCEN, UBA.</span>
-                    <span lang="en">Adjunct Professor, Dept. of Mathematics, FCEN, UBA.</span>
-                </div>
-            </li>
-            <li>
-                <span class="date">2022 – 2023</span>
-                <div class="content">
-                    <span lang="es">Profesor Invitado, Universidad de San Andrés.</span>
-                    <span lang="en">Visiting Professor, Universidad de San Andrés.</span>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <footer style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.8em; color: #999;">
+    <footer style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.8em; color: #999; text-align: center;">
         <span lang="es">Última actualización: Enero 2026</span>
         <span lang="en">Last updated: January 2026</span>
     </footer>
 
     <script>
         function setLanguage(lang) {
-            // Ocultar todos los elementos con atributo lang
             document.querySelectorAll('[lang="es"]').forEach(el => el.style.display = 'none');
             document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
             
-            // Mostrar los del idioma seleccionado
-            // Los elementos inline (como span o strong) deben ser 'inline', los demás 'block'
             document.querySelectorAll('[lang="' + lang + '"]').forEach(el => {
                 if (['SPAN', 'STRONG', 'A', 'EM'].includes(el.tagName)) {
                     el.style.display = 'inline';
@@ -239,13 +249,10 @@
                 }
             });
 
-            // Actualizar estado de los botones
             document.getElementById('btn-es').classList.remove('active');
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
         }
-
-        // Ejecutar por defecto al cargar
         window.onload = () => setLanguage('es');
     </script>
 
