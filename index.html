@@ -13,7 +13,7 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 0 25px;
-            background-color: #f9f9f9; /* Gris extremadamente claro */
+            background-color: #f9f9f9;
         }
 
         /* LÓGICA DE IDIOMAS */
@@ -56,10 +56,14 @@
         .interests-list { margin: 10px 0; font-style: italic; color: #444; }
         
         ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 18px; line-height: 1.5; }
+        li { margin-bottom: 12px; line-height: 1.5; }
         
+        ol.numbered-list { padding-left: 20px; }
+        ol.numbered-list li { margin-bottom: 12px; list-style-type: decimal; }
+
+        .date-range { color: #777; font-size: 0.9em; min-width: 90px; display: inline-block; }
         .thesis { font-size: 0.95em; margin-top: 4px; color: #555; border-left: 2px solid #eee; padding-left: 10px; }
-        .pub-year { color: #777; font-weight: bold; }
+        .item-year { color: #777; font-weight: bold; }
         
         footer { margin-top: 60px; border-top: 1px solid #ddd; padding-top: 20px; font-size: 0.9em; color: #444; text-align: center; }
         .email-footer { font-weight: bold; color: #222; margin-top: 10px; display: block; text-decoration: none; }
@@ -68,8 +72,8 @@
 <body id="main-body">
 
     <div class="lang-switch">
-        <span id="btn-es" class="active" onclick="setLang('es')">ESPAÑOL</span>
-        <span id="btn-en" onclick="setLang('en')">ENGLISH</span>
+        <span id="btn-es" class="active" onclick="setLang('es')">ES</span>
+        <span id="btn-en" onclick="setLang('en')">EN</span>
     </div>
 
     <header>
@@ -103,6 +107,46 @@
     </section>
 
     <section>
+        <h2 lang="es">Publicaciones</h2>
+        <h2 lang="en">Publications</h2>
+        <ol class="numbered-list">
+            <li>"A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487" target="_blank">DOI</a>. <span class="item-year">2025</span>.</li>
+            <li>"Uniform persistence criteria for a variable inputs chemostat model..." (with D. Sepúlveda Oehninger). <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505" target="_blank">DOI</a>. <span class="item-year">2024</span>.</li>
+            <li>"Persistence criteria for a chemostat with variable nutrient input and variable washout with delayed response in growth". <em>Chaos, Solitons & Fractals</em>. <a href="https://doi.org/10.1016/j.chaos.2023.113514" target="_blank">DOI</a>. <span class="item-year">2023</span>.</li>
+            <li>"Optimal condition for asymptotic consensus in the Hegselmann-Krause model..." (with J. Haskovec). <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482" target="_blank">DOI</a>. <span class="item-year">2023</span>.</li>
+            <li>"Cucker-Smale model with time delay". <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
+            <li>"Interacting particles systems with delay and random delay differential equations" (with J. P. Pinasco and N. Saintier). <em>Nonlinear Analysis</em>. <a href="https://doi.org/10.1016/j.na.2021.112524" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
+            <li>"Evolutionary game theory in mixed strategies: From microscopic interactions to kinetic equations" (with J. P. Pinasco and N. Saintier). <em>Kinetic and Related Models</em>. <a href="https://doi.org/10.3934/krm.2020051" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
+            <li>"A game theoretic model of wealth distribution" (with J. P. Pinasco and N. Saintier). <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3" target="_blank">DOI</a>. <span class="item-year">2018</span>.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2 lang="es">Exposiciones</h2>
+        <h2 lang="en">Talks</h2>
+        <ol class="numbered-list">
+            <li>Workshop Frontiers in Computational Social Dynamics and Public Health Innovation, <em>History and present of the Cucker-Smale model</em>. <span class="item-year">2025</span>.</li>
+            <li><span lang="es">Conferencia plenaria en el 8vo Workshop de Modelamiento de Sistemas Biológicos (Chile)</span><span lang="en">Plenary talk at the 8th Workshop on Biological Systems Modeling (Chile)</span>, <em>Modelo de quimiostato con retardo temporal</em>. <span class="item-year">2025</span>.</li>
+            <li>Seminario MatBio-UTEM, Universidad Tecnológica Metropolitana (Chile), <em>Historia y actualidad del modelo de Cucker-Smale</em>. <span class="item-year">2022</span>.</li>
+            <li>XI Congreso latinoamericano de biología matemática (Chile), <em>Modelo de Cucker-Smale con retardo temporal</em>. <span class="item-year">2021</span>.</li>
+            <li>Mathematical Encounters (Junior), <em>Kinetic models in evolutionary game theory</em>. <span class="item-year">2019</span>.</li>
+            <li>LXVI Reunión de Comunicaciones UMA-RSME, <em>Un sistema dinámico con retardo</em>. <span class="item-year">2017</span>.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2 lang="es">Docencia</h2>
+        <h2 lang="en">Teaching</h2>
+        <ul>
+            <li><span class="date-range">2025 – Pres.</span> <span lang="es">Profesor Adjunto, DM, FCEN, UBA.</span><span lang="en">Adjunct Professor, DM, FCEN, UBA.</span></li>
+            <li><span class="date-range">2024</span> <span lang="es">Jefe de Trabajos Prácticos, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP), DM, FCEN, UBA.</span></li>
+            <li><span class="date-range">2023</span> <span lang="es">Profesor, CNBA, UBA.</span><span lang="en">Professor, CNBA, UBA.</span></li>
+            <li><span class="date-range">2022 – 2023</span> <span lang="es">Profesor Invitado, Universidad de San Andrés.</span><span lang="en">Visiting Professor, Universidad de San Andrés.</span></li>
+            <li><span class="date-range">2015 – 2021</span> <span lang="es">Jefe de Trabajos Prácticos / Ayudante de Primera, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP / Ayudante 1era), DM, FCEN, UBA.</span></li>
+        </ul>
+    </section>
+
+    <section>
         <h2 lang="es">Educación</h2>
         <h2 lang="en">Education</h2>
         <ul>
@@ -113,51 +157,8 @@
                     <span lang="en">Thesis: <em>"Models for evolutionary games"</em>. Supervisor: J. P. Pinasco.</span>
                 </div>
             </li>
-            <li>
-                <strong lang="es">Actuario en Economía</strong><strong lang="en">Actuary in Economics</strong>, FCE, UBA.
-            </li>
-            <li>
-                <strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. in Mathematics</strong>, FCEN, UBA.
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h2 lang="es">Publicaciones</h2>
-        <h2 lang="en">Publications</h2>
-        <ul>
-            <li>
-                "A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). 
-                <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487" target="_blank">DOI</a>. <span class="pub-year">2025</span>.
-            </li>
-            <li>
-                "Uniform persistence criteria for a variable inputs chemostat model with delayed response in growth and complete analysis of the periodic case" (with D. Sepúlveda Oehninger). 
-                <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505" target="_blank">DOI</a>. <span class="pub-year">2024</span>.
-            </li>
-            <li>
-                "Persistence criteria for a chemostat with variable nutrient input and variable washout with delayed response in growth". 
-                <em>Chaos, Solitons & Fractals</em>. <a href="https://doi.org/10.1016/j.chaos.2023.113514" target="_blank">DOI</a>. <span class="pub-year">2023</span>.
-            </li>
-            <li>
-                "Optimal condition for asymptotic consensus in the Hegselmann-Krause model with finite speed of information propagation" (with J. Haskovec). 
-                <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482" target="_blank">DOI</a>. <span class="pub-year">2023</span>.
-            </li>
-            <li>
-                "Cucker-Smale model with time delay". 
-                <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195" target="_blank">DOI</a>. <span class="pub-year">2021</span>.
-            </li>
-            <li>
-                "Interacting particles systems with delay and random delay differential equations" (with J. P. Pinasco and N. Saintier). 
-                <em>Nonlinear Analysis</em>. <a href="https://doi.org/10.1016/j.na.2021.112524" target="_blank">DOI</a>. <span class="pub-year">2021</span>.
-            </li>
-            <li>
-                "Evolutionary game theory in mixed strategies: From microscopic interactions to kinetic equations" (with J. P. Pinasco and N. Saintier). 
-                <em>Kinetic and Related Models</em>. <a href="https://doi.org/10.3934/krm.2020051" target="_blank">DOI</a>. <span class="pub-year">2021</span>.
-            </li>
-            <li>
-                "A game theoretic model of wealth distribution" (with J. P. Pinasco and N. Saintier). 
-                <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3" target="_blank">DOI</a>. <span class="pub-year">2018</span>.
-            </li>
+            <li><strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. in Mathematics</strong>, FCEN, UBA.</li>
+            <li><strong lang="es">Actuario en Economía</strong><strong lang="en">Actuary in Economics</strong>, FCE, UBA.</li>
         </ul>
     </section>
 
@@ -175,7 +176,6 @@
             const body = document.getElementById('main-body');
             const btnEs = document.getElementById('btn-es');
             const btnEn = document.getElementById('btn-en');
-
             if (lang === 'en') {
                 body.classList.add('en-active');
                 btnEn.classList.add('active');
@@ -187,6 +187,5 @@
             }
         }
     </script>
-
 </body>
 </html>
