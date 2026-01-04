@@ -46,8 +46,7 @@
 
         /* ESTILOS VISUALES */
         header { margin-bottom: 40px; }
-        h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: normal; color: #000; }
-        .position-title { font-size: 1.1em; color: #555; margin-bottom: 10px; }
+        h1 { font-size: 2.2em; margin-bottom: 10px; font-weight: normal; color: #000; }
         .links-social { margin-top: 15px; }
         .links-social a { font-size: 0.9em; color: #0056b3; text-decoration: none; border-bottom: 1px solid transparent; }
         .links-social a:hover { border-bottom: 1px solid #0056b3; }
@@ -58,8 +57,14 @@
         ul { list-style-type: none; padding: 0; }
         li { margin-bottom: 12px; line-height: 1.5; }
         
-        ol.numbered-list { padding-left: 20px; }
-        ol.numbered-list li { margin-bottom: 12px; list-style-type: decimal; }
+        /* ESTILO ITEMIZE (VIÑETAS) PARA PUBLICACIONES Y EXPOSICIONES */
+        ul.itemize-list {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        ul.itemize-list li {
+            margin-bottom: 12px;
+        }
 
         .date-range { color: #777; font-size: 0.9em; min-width: 90px; display: inline-block; }
         .thesis { font-size: 0.95em; margin-top: 4px; color: #555; border-left: 2px solid #eee; padding-left: 10px; }
@@ -78,28 +83,17 @@
 
     <header>
         <h1>Mauro Rodriguez Cartabia</h1>
-        <div class="position-title">
-            <span lang="es">Investigador Asistente (CONICET)</span>
-            <span lang="en">Assistant Researcher (CONICET)</span>
-        </div>
         <div class="links-social">
             <a href="https://scholar.google.com/citations?user=ZqE6hxEAAAAJ&hl=es&oi=ao" target="_blank">Google Scholar</a>
         </div>
     </header>
 
     <section>
-        <h2 lang="es">Intereses de Investigación</h2>
-        <h2 lang="en">Research Interests</h2>
-        <p class="interests-list" lang="es">Teoría de juegos evolutivos y ecuaciones diferenciales.</p>
-        <p class="interests-list" lang="en">Evolutionary game theory and differential equations.</p>
-    </section>
-
-    <section>
         <h2 lang="es">Posición Actual</h2>
         <h2 lang="en">Current Position</h2>
         <ul>
             <li>
-                <strong lang="es">Investigador Asistente</strong><strong lang="en">Assistant Researcher</strong>, CONICET. <br> 
+                <strong lang="es">Investigador Asistente</strong><strong lang="en">Assistant Researcher</strong>,  Conicet. <br> 
                 <span lang="es">Lugar de trabajo: Instituto de investigaciones matemáticas Luis A. Santaló (IMAS). Director: P. Amster.</span>
                 <span lang="en">Affiliation: Luis A. Santaló Mathematical Research Institute (IMAS). Supervisor: P. Amster.</span>
             </li>
@@ -107,43 +101,10 @@
     </section>
 
     <section>
-        <h2 lang="es">Publicaciones</h2>
-        <h2 lang="en">Publications</h2>
-        <ol class="numbered-list">
-            <li>"A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487" target="_blank">DOI</a>. <span class="item-year">2025</span>.</li>
-            <li>"Uniform persistence criteria for a variable inputs chemostat model..." (with D. Sepúlveda Oehninger). <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505" target="_blank">DOI</a>. <span class="item-year">2024</span>.</li>
-            <li>"Persistence criteria for a chemostat with variable nutrient input and variable washout with delayed response in growth". <em>Chaos, Solitons & Fractals</em>. <a href="https://doi.org/10.1016/j.chaos.2023.113514" target="_blank">DOI</a>. <span class="item-year">2023</span>.</li>
-            <li>"Optimal condition for asymptotic consensus in the Hegselmann-Krause model..." (with J. Haskovec). <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482" target="_blank">DOI</a>. <span class="item-year">2023</span>.</li>
-            <li>"Cucker-Smale model with time delay". <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
-            <li>"Interacting particles systems with delay and random delay differential equations" (with J. P. Pinasco and N. Saintier). <em>Nonlinear Analysis</em>. <a href="https://doi.org/10.1016/j.na.2021.112524" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
-            <li>"Evolutionary game theory in mixed strategies: From microscopic interactions to kinetic equations" (with J. P. Pinasco and N. Saintier). <em>Kinetic and Related Models</em>. <a href="https://doi.org/10.3934/krm.2020051" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
-            <li>"A game theoretic model of wealth distribution" (with J. P. Pinasco and N. Saintier). <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3" target="_blank">DOI</a>. <span class="item-year">2018</span>.</li>
-        </ol>
-    </section>
-
-    <section>
-        <h2 lang="es">Exposiciones</h2>
-        <h2 lang="en">Talks</h2>
-        <ol class="numbered-list">
-            <li>Workshop Frontiers in Computational Social Dynamics and Public Health Innovation, <em>History and present of the Cucker-Smale model</em>. <span class="item-year">2025</span>.</li>
-            <li><span lang="es">Conferencia plenaria en el 8vo Workshop de Modelamiento de Sistemas Biológicos (Chile)</span><span lang="en">Plenary talk at the 8th Workshop on Biological Systems Modeling (Chile)</span>, <em>Modelo de quimiostato con retardo temporal</em>. <span class="item-year">2025</span>.</li>
-            <li>Seminario MatBio-UTEM, Universidad Tecnológica Metropolitana (Chile), <em>Historia y actualidad del modelo de Cucker-Smale</em>. <span class="item-year">2022</span>.</li>
-            <li>XI Congreso latinoamericano de biología matemática (Chile), <em>Modelo de Cucker-Smale con retardo temporal</em>. <span class="item-year">2021</span>.</li>
-            <li>Mathematical Encounters (Junior), <em>Kinetic models in evolutionary game theory</em>. <span class="item-year">2019</span>.</li>
-            <li>LXVI Reunión de Comunicaciones UMA-RSME, <em>Un sistema dinámico con retardo</em>. <span class="item-year">2017</span>.</li>
-        </ol>
-    </section>
-
-    <section>
-        <h2 lang="es">Docencia</h2>
-        <h2 lang="en">Teaching</h2>
-        <ul>
-            <li><span class="date-range">2025 – Pres.</span> <span lang="es">Profesor Adjunto, DM, FCEN, UBA.</span><span lang="en">Adjunct Professor, DM, FCEN, UBA.</span></li>
-            <li><span class="date-range">2024</span> <span lang="es">Jefe de Trabajos Prácticos, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP), DM, FCEN, UBA.</span></li>
-            <li><span class="date-range">2023</span> <span lang="es">Profesor, CNBA, UBA.</span><span lang="en">Professor, CNBA, UBA.</span></li>
-            <li><span class="date-range">2022 – 2023</span> <span lang="es">Profesor Invitado, Universidad de San Andrés.</span><span lang="en">Visiting Professor, Universidad de San Andrés.</span></li>
-            <li><span class="date-range">2015 – 2021</span> <span lang="es">Jefe de Trabajos Prácticos / Ayudante de Primera, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP / Ayudante 1era), DM, FCEN, UBA.</span></li>
-        </ul>
+        <h2 lang="es">Intereses de Investigación</h2>
+        <h2 lang="en">Research Interests</h2>
+        <p class="interests-list" lang="es">Teoría de juegos evolutivos y ecuaciones diferenciales.</p>
+        <p class="interests-list" lang="en">Evolutionary game theory and differential equations.</p>
     </section>
 
     <section>
@@ -159,6 +120,46 @@
             </li>
             <li><strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. in Mathematics</strong>, FCEN, UBA.</li>
             <li><strong lang="es">Actuario en Economía</strong><strong lang="en">Actuary in Economics</strong>, FCE, UBA.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 lang="es">Publicaciones</h2>
+        <h2 lang="en">Publications</h2>
+        <ul class="itemize-list">
+            <li>"A discrete one-species chemostat model with delayed response in the growth and non-constant supply" (with P. Amster). <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2025.109487" target="_blank">DOI</a>. <span class="item-year">2025</span>.</li>
+            <li>"Uniform persistence criteria for a variable inputs chemostat model..." (with D. Sepúlveda Oehninger). <em>Comm. in Nonlinear Science and Numerical Simulation</em>. <a href="https://doi.org/10.1016/j.cnsns.2024.108505" target="_blank">DOI</a>. <span class="item-year">2024</span>.</li>
+            <li>"Persistence criteria for a chemostat with variable nutrient input and variable washout with delayed response in growth". <em>Chaos, Solitons & Fractals</em>. <a href="https://doi.org/10.1016/j.chaos.2023.113514" target="_blank">DOI</a>. <span class="item-year">2023</span>.</li>
+            <li>"Optimal condition for asymptotic consensus in the Hegselmann-Krause model..." (with J. Haskovec). <em>Proc. of the American Mathematical Society</em>. <a href="https://doi.org/10.1090/proc/16482" target="_blank">DOI</a>. <span class="item-year">2023</span>.</li>
+            <li>"Cucker-Smale model with time delay". <em>Discrete and Continuous Dynamical Systems</em>. <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2021195" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
+            <li>"Interacting particles systems with delay and random delay differential equations" (with J. P. Pinasco and N. Saintier). <em>Nonlinear Analysis</em>. <a href="https://doi.org/10.1016/j.na.2021.112524" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
+            <li>"Evolutionary game theory in mixed strategies: From microscopic interactions to kinetic equations" (with J. P. Pinasco and N. Saintier). <em>Kinetic and Related Models</em>. <a href="https://doi.org/10.3934/krm.2020051" target="_blank">DOI</a>. <span class="item-year">2021</span>.</li>
+            <li>"A game theoretic model of wealth distribution" (with J. P. Pinasco and N. Saintier). <em>Dynamic Games and Applications</em>. <a href="https://link.springer.com/article/10.1007/s13235-018-0240-3" target="_blank">DOI</a>. <span class="item-year">2018</span>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 lang="es">Exposiciones</h2>
+        <h2 lang="en">Talks</h2>
+        <ul class="itemize-list">
+            <li>Workshop Frontiers in Computational Social Dynamics and Public Health Innovation, <em>History and present of the Cucker-Smale model</em>. <span class="item-year">2025</span>.</li>
+            <li><span lang="es">Conferencia plenaria en el 8vo Workshop de Modelamiento de Sistemas Biológicos (Chile)</span><span lang="en">Plenary talk at the 8th Workshop on Biological Systems Modeling (Chile)</span>, <em>Modelo de quimiostato con retardo temporal</em>. <span class="item-year">2025</span>.</li>
+            <li>Seminario MatBio-UTEM, Universidad Tecnológica Metropolitana (Chile), <em>Historia y actualidad del modelo de Cucker-Smale</em>. <span class="item-year">2022</span>.</li>
+            <li>XI Congreso latinoamericano de biología matemática (Chile), <em>Modelo de Cucker-Smale con retardo temporal</em>. <span class="item-year">2021</span>.</li>
+            <li>Mathematical Encounters (Junior), <em>Kinetic models in evolutionary game theory</em>. <span class="item-year">2019</span>.</li>
+            <li>LXVI Reunión de Comunicaciones UMA-RSME, <em>Un sistema dinámico con retardo</em>. <span class="item-year">2017</span>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 lang="es">Docencia</h2>
+        <h2 lang="en">Teaching</h2>
+        <ul>
+            <li><span class="date-range">2025 </span> <span lang="es">Profesor Adjunto, DM, FCEN, UBA.</span><span lang="en">Adjunct Professor, DM, FCEN, UBA.</span></li>
+            <li><span class="date-range">2024</span> <span lang="es">Jefe de Trabajos Prácticos, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP), DM, FCEN, UBA.</span></li>
+            <li><span class="date-range">2023</span> <span lang="es">Profesor, CNBA, UBA.</span><span lang="en">Professor, CNBA, UBA.</span></li>
+            <li><span class="date-range">2022 – 2023</span> <span lang="es">Profesor Invitado, Universidad de San Andrés.</span><span lang="en">Visiting Professor, Universidad de San Andrés.</span></li>
+            <li><span class="date-range">2015 – 2021</span> <span lang="es">Jefe de Trabajos Prácticos / Ayudante de Primera, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP / Ayudante 1era), DM, FCEN, UBA.</span></li>
         </ul>
     </section>
 
