@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mauro Rodriguez Cartabia</title>
     <style>
+        /* CONFIGURACIÓN BÁSICA */
         body {
             font-family: "Georgia", serif;
             line-height: 1.6;
@@ -14,96 +15,52 @@
             padding: 0 25px;
             background-color: #fff;
         }
+
+        /* LÓGICA DE IDIOMAS (ESTO CORRIGE EL ERROR) */
+        /* Por defecto, ocultamos todo lo que sea inglés */
+        [lang="en"] { display: none; }
         
-        /* Selector de Idioma */
+        /* Cuando el body tiene la clase 'lang-en', ocultamos español y mostramos inglés */
+        body.en-active [lang="es"] { display: none; }
+        body.en-active [lang="en"] { display: inline; }
+        /* Para bloques (div, section, h2) usamos display block */
+        body.en-active div[lang="en"], 
+        body.en-active section[lang="en"], 
+        body.en-active h2[lang="en"],
+        body.en-active p[lang="en"] { display: block; }
+
+        /* SELECTOR DE IDIOMA */
         .lang-switch {
             text-align: right;
             font-size: 0.85em;
             margin-bottom: 30px;
         }
-        .lang-switch a {
+        .lang-switch span {
             cursor: pointer;
             color: #999;
-            text-decoration: none;
             margin-left: 12px;
             transition: 0.3s;
+            text-decoration: none;
         }
-        .lang-switch a.active {
+        .lang-switch span.active {
             color: #000;
             font-weight: bold;
             border-bottom: 1px solid #333;
         }
 
-        header {
-            margin-bottom: 40px;
-        }
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 5px;
-            font-weight: normal;
-            color: #000;
-        }
-        .position-title {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 10px;
-        }
-        .links-social {
-            margin-top: 15px;
-        }
-        .links-social a {
-            margin-right: 15px;
-            font-size: 0.9em;
-            color: #0056b3;
-            text-decoration: none;
-        }
-        .links-social a:hover { text-decoration: underline; }
-
-        h2 {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            margin-top: 45px;
-            font-weight: normal;
-            text-transform: uppercase;
-            font-size: 0.95em;
-            letter-spacing: 2px;
-            color: #666;
-        }
-
-        .interests-list {
-            margin: 10px 0;
-            padding: 0;
-            font-style: italic;
-            color: #444;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 18px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .date {
-            min-width: 130px;
-            color: #888;
-            font-size: 0.9em;
-        }
-        .content {
-            flex: 1;
-            min-width: 250px;
-        }
-        .thesis {
-            font-size: 0.95em;
-            margin-top: 4px;
-            color: #555;
-            border-left: 2px solid #f0f0f0;
-            padding-left: 10px;
-        }
-        
-        [lang="en"] { display: none; }
+        /* ESTILOS VISUALES */
+        header { margin-bottom: 40px; }
+        h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: normal; color: #000; }
+        .position-title { font-size: 1.1em; color: #555; margin-bottom: 10px; }
+        .links-social { margin-top: 15px; }
+        .links-social a { margin-right: 15px; font-size: 0.9em; color: #0056b3; text-decoration: none; }
+        h2 { border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 45px; font-weight: normal; text-transform: uppercase; font-size: 0.9em; letter-spacing: 2px; color: #666; }
+        .interests-list { margin: 10px 0; font-style: italic; color: #444; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 18px; display: flex; flex-wrap: wrap; }
+        .date { min-width: 130px; color: #888; font-size: 0.9em; }
+        .content { flex: 1; min-width: 250px; }
+        .thesis { font-size: 0.95em; margin-top: 4px; color: #555; border-left: 2px solid #f0f0f0; padding-left: 10px; }
         
         @media (max-width: 600px) {
             .date { width: 100%; margin-bottom: 3px; }
@@ -111,11 +68,11 @@
         }
     </style>
 </head>
-<body>
+<body id="main-body">
 
     <div class="lang-switch">
-        <a id="btn-es" class="active" onclick="setLanguage('es')">ESPAÑOL</a>
-        <a id="btn-en" onclick="setLanguage('en')">ENGLISH</a>
+        <span id="btn-es" class="active" onclick="setLang('es')">ES</span>
+        <span id="btn-en" onclick="setLang('en')">EN</span>
     </div>
 
     <header>
@@ -128,7 +85,6 @@
             IMAS - Instituto de Investigaciones Matemáticas "Luis A. Santaló"<br>
             <a href="mailto:mrodriguezcartabia@gmail.com">mrodriguezcartabia@gmail.com</a>
         </div>
-        
         <div class="links-social">
             <a href="https://scholar.google.com/citations?user=TU_ID_AQUI" target="_blank">Google Scholar</a>
             <a href="https://www.researchgate.net/profile/Mauro-Rodriguez-Cartabia" target="_blank">ResearchGate</a>
@@ -139,10 +95,8 @@
     <section>
         <h2 lang="es">Intereses de Investigación</h2>
         <h2 lang="en">Research Interests</h2>
-        <p class="interests-list">
-            <span lang="es">Teoría de juegos evolutivos, ecuaciones diferenciales con retardo, modelos de quimiostatos, sistemas de partículas interactuantes, ecuaciones cinéticas.</span>
-            <span lang="en">Evolutionary game theory, delay differential equations, chemostat models, interacting particle systems, kinetic equations.</span>
-        </p>
+        <p class="interests-list" lang="es">Teoría de juegos evolutivos, ecuaciones diferenciales con retardo, modelos de quimiostatos, sistemas de partículas interactuantes, ecuaciones cinéticas.</p>
+        <p class="interests-list" lang="en">Evolutionary game theory, delay differential equations, chemostat models, interacting particle systems, kinetic equations.</p>
     </section>
 
     <section>
@@ -237,23 +191,21 @@
     </footer>
 
     <script>
-        function setLanguage(lang) {
-            document.querySelectorAll('[lang="es"]').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
-            
-            document.querySelectorAll('[lang="' + lang + '"]').forEach(el => {
-                if (['SPAN', 'STRONG', 'A', 'EM'].includes(el.tagName)) {
-                    el.style.display = 'inline';
-                } else {
-                    el.style.display = 'block';
-                }
-            });
+        function setLang(lang) {
+            const body = document.getElementById('main-body');
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
 
-            document.getElementById('btn-es').classList.remove('active');
-            document.getElementById('btn-en').classList.remove('active');
-            document.getElementById('btn-' + lang).classList.add('active');
+            if (lang === 'en') {
+                body.classList.add('en-active');
+                btnEn.classList.add('active');
+                btnEs.classList.remove('active');
+            } else {
+                body.classList.remove('en-active');
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+            }
         }
-        window.onload = () => setLanguage('es');
     </script>
 
 </body>
