@@ -4,75 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mauro Rodriguez Cartabia</title>
-    <style>
-        /* CONFIGURACIÓN BÁSICA */
-        body {
-            font-family: "Georgia", serif;
-            line-height: 1.6;
-            color: #222;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 25px;
-            background-color: #e2e8f0;
-        }
-
-        /* LÓGICA DE IDIOMAS */
-        [lang="en"] { display: none; }
-        body.en-active [lang="es"] { display: none; }
-        body.en-active [lang="en"] { display: inline; }
-        body.en-active div[lang="en"], 
-        body.en-active section[lang="en"], 
-        body.en-active h2[lang="en"],
-        body.en-active p[lang="en"] { display: block; }
-
-        /* SELECTOR DE IDIOMA */
-        .lang-switch {
-            text-align: right;
-            font-size: 0.8em;
-            margin-bottom: 30px;
-        }
-        .lang-switch span {
-            cursor: pointer;
-            color: #999;
-            margin-left: 12px;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-        .lang-switch span.active {
-            color: #000;
-            font-weight: bold;
-            border-bottom: 1px solid #333;
-        }
-
-        /* ESTILOS VISUALES */
-        header { margin-bottom: 40px; }
-        h1 { font-size: 2.2em; margin-bottom: 10px; font-weight: normal; color: #000; }
-        .links-social { margin-top: 15px; }
-        .links-social a { font-size: 0.9em; color: #0056b3; text-decoration: none; border-bottom: 1px solid transparent; }
-        .links-social a:hover { border-bottom: 1px solid #0056b3; }
-
-        h2 { border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-top: 45px; font-weight: normal; text-transform: uppercase; font-size: 0.85em; letter-spacing: 2px; color: #666; }
-        .interests-list { margin: 10px 0; font-style: italic; color: #444; }
-        
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 12px; line-height: 1.5; }
-        
-        /* ESTILO ITEMIZE (VIÑETAS) PARA PUBLICACIONES Y EXPOSICIONES */
-        ul.itemize-list {
-            padding-left: 20px;
-            list-style-type: disc;
-        }
-        ul.itemize-list li {
-            margin-bottom: 12px;
-        }
-
-        .date-range { color: #777; font-size: 0.9em; min-width: 90px; display: inline-block; }
-        .thesis { font-size: 0.95em; margin-top: 4px; color: #555; border-left: 2px solid #eee; padding-left: 10px; }
-        .item-year { color: #777; font-weight: bold; }
-        
-        footer { margin-top: 60px; border-top: 1px solid #ddd; padding-top: 20px; font-size: 0.9em; color: #444; text-align: center; }
-        .email-footer { font-weight: bold; color: #222; margin-top: 10px; display: block; text-decoration: none; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body id="main-body">
 
@@ -94,8 +26,8 @@
         <ul>
             <li>
                 <strong lang="es">Investigador Asistente</strong><strong lang="en">Assistant Researcher</strong>,  Conicet. <br> 
-                <span lang="es">Lugar de trabajo: Instituto de investigaciones matemáticas Luis A. Santaló. Director: P. Amster.</span>
-                <span lang="en">Affiliation: Instituto de investigaciones matemáticas Luis A. Santaló. Supervisor: P. Amster.</span>
+                <span lang="es">Lugar de trabajo: Instituto de investigaciones matemáticas Luis A. Santaló. <br> Director: P. Amster.</span>
+                <span lang="en">Affiliation: Instituto de investigaciones matemáticas Luis A. Santaló. <br> Supervisor: P. Amster.</span>
             </li>
         </ul>
     </section>
@@ -112,14 +44,15 @@
         <h2 lang="en">Education</h2>
         <ul>
             <li>
-                <strong lang="es">Doctor en Ciencias Matemáticas</strong><strong lang="en">Ph.D. in Mathematical Sciences</strong>, FCEN, UBA.<br>
+                <strong lang="es">Doctor en Ciencias Matemáticas</strong><strong lang="en">Ph.D. in Mathematical Sciences</strong>, Facultad de Ciencias Exactas y Naturales (FCEN), 
+                Universidad de Buenos Aires (UBA).<br>
                 <div class="thesis">
-                    <span lang="es">Tesis: <em>"Modelos para juegos evolutivos"</em>. Director: J. P. Pinasco.</span>
-                    <span lang="en">Thesis: <em>"Models for evolutionary games"</em>. Supervisor: J. P. Pinasco.</span>
+                    <span lang="es">Tesis: <em>"Modelos para juegos evolutivos"</em>.<br> Director: J. P. Pinasco.</span>
+                    <span lang="en">Thesis: <em>"Models for evolutionary games"</em>.<br> Supervisor: J. P. Pinasco.</span>
                 </div>
             </li>
             <li><strong lang="es">Licenciado en Ciencias Matemáticas</strong><strong lang="en">B.S. in Mathematics</strong>, FCEN, UBA.</li>
-            <li><strong lang="es">Actuario</strong><strong lang="en">Actuary</strong>, FCE, UBA.</li>
+            <li><strong lang="es">Actuario</strong><strong lang="en">Actuary</strong>, Facultad de Ciencias Económicas, UBA.</li>
         </ul>
     </section>
 
@@ -155,10 +88,11 @@
         <h2 lang="es">Docencia</h2>
         <h2 lang="en">Teaching</h2>
         <ul>
-            <li><span class="date-range">2025 </span> <span lang="es">Profesor Adjunto, DM, FCEN, UBA.</span><span lang="en">Adjunct Professor, DM, FCEN, UBA.</span></li>
+            <li><span class="date-range">2025 </span> <span lang="es">Profesor Adjunto, Departamente de Matemática (DM), FCEN, UBA.</span><span lang="en">Adjunct Professor, DM, FCEN, UBA.</span></li>
             <li><span class="date-range">2024</span> <span lang="es">Jefe de Trabajos Prácticos, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP), DM, FCEN, UBA.</span></li>
-            <li><span class="date-range">2023</span> <span lang="es">Profesor, CNBA, UBA.</span><span lang="en">Professor, CNBA, UBA.</span></li>
-            <li><span class="date-range">2022 – 2023</span> <span lang="es">Profesor Invitado, Universidad de San Andrés.</span><span lang="en">Visiting Professor, Universidad de San Andrés.</span></li>
+            <li><span class="date-range">2023</span> <span lang="es">Profesor, CNBA, UBA.</span><span lang="en">Professor, Colegio Nacional de Buenos Aires, UBA.</span></li>
+            <li><span class="date-range">2022 – 2023</span> <span lang="es">Profesor Invitado, Departamento de Economía, Universidad de San Andrés.</span>
+                <span lang="en">Visiting Professor, Departamento de Economía,  Universidad de San Andrés.</span></li>
             <li><span class="date-range">2015 – 2021</span> <span lang="es">Jefe de Trabajos Prácticos / Ayudante de Primera, DM, FCEN, UBA.</span><span lang="en">Teaching Assistant (JTP / Ayudante 1era), DM, FCEN, UBA.</span></li>
         </ul>
     </section>
