@@ -1,0 +1,87 @@
+/* CONFIGURACIÓN BÁSICA */
+body {
+    font-family: "Georgia", serif;
+    line-height: 1.6;
+    color: #222;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 25px;
+    background-color: #e2e8f0;
+}
+
+/* LÓGICA DE IDIOMAS */
+[lang="en"] { display: none; }
+body.en-active [lang="es"] { display: none; }
+body.en-active [lang="en"] { display: inline; }
+body.en-active div[lang="en"], 
+body.en-active section[lang="en"], 
+body.en-active h2[lang="en"],
+body.en-active p[lang="en"] { display: block; }
+
+/* SELECTOR DE IDIOMA */
+.lang-switch {
+    text-align: right;
+    font-size: 0.8em;
+    margin-bottom: 30px;
+}
+.lang-switch span {
+    cursor: pointer;
+    color: #999;
+    margin-left: 12px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.lang-switch span.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+}
+
+/* ESTILOS VISUALES */
+header { margin-bottom: 40px; }
+h1 { font-size: 2.2em; margin-bottom: 10px; font-weight: normal; color: #000; }
+.links-social { margin-top: 15px; }
+.links-social a { font-size: 0.9em; color: #0056b3; text-decoration: none; border-bottom: 1px solid transparent; }
+.links-social a:hover { border-bottom: 1px solid #0056b3; }
+
+h2 { border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-top: 45px; font-weight: normal; text-transform: uppercase; font-size: 0.85em; letter-spacing: 2px; color: #666; }
+.interests-list { margin: 10px 0; font-style: italic; color: #444; }
+
+ul { list-style-type: none; padding: 0; }
+li { margin-bottom: 12px; line-height: 1.5; }
+
+/* ESTILO ITEMIZE (VIÑETAS) PARA PUBLICACIONES Y EXPOSICIONES */
+ul.itemize-list {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+ul.itemize-list li {
+    margin-bottom: 12px;
+}
+
+.date-range { color: #777; font-size: 0.9em; min-width: 90px; display: inline-block; }
+.thesis { font-size: 0.95em; margin-top: 4px; color: #555; border-left: 2px solid #eee; padding-left: 10px; }
+.item-year { color: #777; font-weight: bold; }
+
+footer { margin-top: 60px; border-top: 1px solid #ddd; padding-top: 20px; font-size: 0.9em; color: #444; text-align: center; }
+.email-footer { font-weight: bold; color: #222; margin-top: 10px; display: block; text-decoration: none; }
+
+.date-range { 
+    color: #777; 
+    font-size: 0.9em; 
+    min-width: 100px; /* Un poco más de aire */
+    display: inline-block; 
+    vertical-align: top; /* Ayuda a alinear mejor el texto largo */
+}
+
+/* Para celulares */
+@media (max-width: 480px) {
+    .date-range {
+        display: block; /* En celulares, la fecha ocupa su propia línea */
+        margin-bottom: 2px;
+    }
+    
+    ul li {
+        margin-bottom: 18px; /* Más espacio entre ítems para facilitar lectura */
+    }
+}
