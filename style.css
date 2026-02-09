@@ -64,7 +64,7 @@ ul.itemize-list li {
 .item-year { color: #777; font-weight: bold; }
 
 footer { margin-top: 60px; border-top: 1px solid #ddd; padding-top: 20px; font-size: 0.9em; color: #444; text-align: center; }
-.email-footer { font-weight: bold; color: #222; margin-top: 10px; display: block; text-decoration: none; }
+.email-footer { font-weight: bold; color: #222; margin-top: 10px; text-decoration: none; }
 
 .date-range { 
     color: #777; 
